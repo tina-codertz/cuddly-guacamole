@@ -1,17 +1,22 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { motion } from "framer-motion";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { title } from "framer-motion/m";
+import React, { useEffect } from "react";
+
+import { AnimatePresence, motion } from "framer-motion";
+
 
 // Background image for Welcome section
 const welcomeBg = "/assets/about-bg.png";
 
 const Home: React.FC = () => {
+  const [index, setIndex] = React.useState(0);
+
+   // Autoplay every 6 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, []);
   const heroSlides = [
     // {
     //   image: "/assets/01.jpg",
@@ -78,49 +83,45 @@ const Home: React.FC = () => {
   return (
     <div>
       {/* HERO CAROUSEL */}
-      <section className="">
-        <Swiper
-          modules={[Autoplay, EffectFade, Navigation, Pagination]}
-          slidesPerView={1}
-          autoplay={{ delay: 6000, disableOnInteraction: false }}
-          loop
-          effect="fade"
-          speed={1000}
-          pagination={{ clickable: true }}
-          navigation
-          className="h-screen w-full "
-        >
-          {heroSlides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${slide.image})` }}>
-                <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/70" />
-                <div className="relative h-full flex items-center justify-center text-center px-6">
-                  <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true }}
-                    className="max-w-5xl"
-                  >
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight whitespace-pre-line drop-shadow-2xl">
-                      {slide.title}
-                    </h1>
-                    <p className="text-lg md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto font-light">
-                      {slide.description}
-                    </p>
-                    <a
-                      href={slide.buttonLink}
-                      className="inline-block bg-[#0073A4] hover:bg-[#005f7a] text-white font-bold text-lg py-4 px-10 rounded-full transition-all transform hover:scale-110 shadow-xl"
-                    >
-                      {slide.buttonText}
-                    </a>
-                  </motion.div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <section className="relative h-screen w-full overflow-hidden">
+      <AnimatePresence>
+        {heroSlides.map((slide, i) =>
+          i === index ? (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2 }}
+              className="absolute inset-0 w-full h-full bg-cover bg-center flex items-center justify-center text-center"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            >
+              <div className="absolute inset-0 bg-black/60" />
+
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="relative max-w-5xl px-6 text-white"
+              >
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight whitespace-pre-line drop-shadow-2xl">
+                  {slide.title}
+                </h1>
+                <p className="text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light text-white/90">
+                  {slide.description}
+                </p>
+                <a
+                  href={slide.buttonLink}
+                  className="inline-block bg-[#0073A4] hover:bg-[#005f7a] text-white font-bold text-lg py-4 px-10 rounded-full transition-all transform hover:scale-110 shadow-xl"
+                >
+                  {slide.buttonText}
+                </a>
+              </motion.div>
+            </motion.div>
+          ) : null
+        )}
+      </AnimatePresence>
+    </section>
 
       {/* WELCOME SECTION */}
       <section className="py-24 px-6 bg-cover bg-center bg-fixed relative" style={{ backgroundImage: `url(${welcomeBg})` }}>
