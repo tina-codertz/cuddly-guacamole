@@ -7,19 +7,23 @@ import Donation from './pages/Donation'
 import Events from './pages/Events'
 import Programs from './pages/Programs'
 import Home from './pages/Home'
+import Amr from './pages/programs/Amr'
+import YouthProgram from './pages/programs/YouthProgram'
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<MainLayout/>}>
+        <Route  element={<MainLayout/>}>
           {/* nested routes  */}
-         <Route path='home' element={<Home/>}/>
+         <Route path='/' element={<Home/>}/>
          <Route path="about" element={<About/>}/>
          <Route path="contacts" element={<Contacts/>}/>
          <Route path="donation" element={<Donation/>}/>
          <Route path="events" element={<Events/>}/>
          <Route path="programs" element={<Programs/>}/>
+         <Route path="programs/amr" element={<Amr/>}/>
+         <Route path="programs/youth" element={<YouthProgram/>}/>
 
         </Route>
        

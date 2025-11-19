@@ -43,8 +43,8 @@ const PageHeader:React.FC = () => {
                 ))}
             </div>
 
-            <button className='bg-white hover:bg-blue-900 text-blue-300 rounded-full text-sm transition p-3'>
-                Get started
+            <button className='bg-white hover:bg-[#005f7a] text-[#0073A4] rounded-full text-sm transition p-3'>
+               <a href="home">Get started</a>
             </button>
         </div>
     </div>
