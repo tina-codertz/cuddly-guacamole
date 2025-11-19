@@ -21,8 +21,8 @@ const Programs: React.FC = () => {
 
   const programs = [
     {
-      title: "My AMR story (Fight AMR)",
-      subtitle: "I share I save lives",
+      title: "My AMR Story ",
+      subtitle: "A narrative, saving lives",
       img: "/assets/05.jpg",
        to: "/programs/amr",
       color: "from-blue-600 to-cyan-600",

@@ -49,7 +49,7 @@ const Home: React.FC = () => {
   ];
 
   const programs = [
-    { img: "/assets/05.jpg", title: "MY AMR STORY (A NARRATIVE, SAVING LIVES)", desc: "National campaign against antimicrobial resistance.", link: "/programs" },
+    { img: "/assets/05.jpg", title: "My AMR Story (A narrative, saving lives)", desc: "National campaign against antimicrobial resistance.", link: "/programs" },
     { img: "/assets/WhatsApp Image 2025-11-17 at 16.00.40.jpeg", title: "The YouthPulse Program 2025", desc: "The YouthPulse Program 2025 is TYHDO's flagship initiative to cultivate youth leadership in public health.", link: "/programs" },
     { img: "/assets/03.jpg", title: "Tanzania Youth Health Forum", desc: "The largest annual youth health gathering in Tanzania — 600+ delegates.", link: "/programs" },
     { img: "/assets/PHOTO-2024-09-16-18-15-57.jpg", title: "Tanzania Youth Research Fellowship", desc: "One-year mentorship for young health researchers.", link:  "/programs" },
@@ -182,7 +182,12 @@ const Home: React.FC = () => {
               </p>
             </motion.div>
 
-            <motion.div>
+            <motion.div
+                initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-3xl font-bold text-gray-800 mb-6">Our Focus Areas</h3>
               <div className="space-y-8">
                 {focus.map((area, i) => (

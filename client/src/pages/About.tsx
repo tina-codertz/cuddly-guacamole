@@ -29,10 +29,10 @@ const About: React.FC = () => {
   ];
 
   const leadership = [
-    { name: "Tumaini Makole", role: "Director\nNTDs Cluster Head", img: "/assets/team/tumaini.jpg" },
-    { name: "Noel Shimba", role: "Deputy Director\nNCDs Cluster Head", img: "/assets/team/noel.jpg" },
-    { name: "Meseline Mulokozi", role: "Programs Manager\nSRHR & HIV/AIDS Head", img: "/assets/team/meseline.jpg" },
-    { name: "Adam Mohammed", role: "Media & Communication Manager\nAMR Cluster Head", img: "/assets/team/adam.jpg" },
+    { name: "Tumaini Makole", role: "Director", img: "/assets/team/tumaini.jpg" },
+    { name: "Noel Shimba", role: "Deputy Director", img: "/assets/team/noel.jpg" },
+    { name: "Meseline Mulokozi", role: "Programs Manager", img: "/assets/team/meseline.jpg" },
+    { name: "Adam Mohammed", role: "Media & Communication Manager", img: "/assets/team/adam.jpg" },
     { name: "Judith Reuben", role: "Finance & Administration Officer", img: "/assets/team/judith.jpg" },
   ];
 
@@ -70,7 +70,14 @@ const About: React.FC = () => {
 
       {/* INTRODUCTION */}
       <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
+        <AnimatePresence>
+        <motion.div 
+        
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.2 }}
+        className="max-w-6xl mx-auto text-center">
           <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
             About Tanzania Youth Health and Development Organization (TYHDO)
           </motion.h2>
@@ -79,12 +86,14 @@ const About: React.FC = () => {
             <br /><br />
             We are a vibrant community of young health advocates, healthcare professionals, researchers, and change-makers united by one goal: <strong>to transform Tanzania’s public health landscape through youth leadership, evidence-based advocacy, and community-driven action</strong>.
           </motion.p>
-        </div>
+        </motion.div>
+        </AnimatePresence>
       </section>
 
       {/* MISSION, VISION, OBJECTIVES */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+        <AnimatePresence>
+        <motion.div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
           {[
             { title: "Our Mission", icon: Sun, desc: "To equip youth and local communities with proven knowledge and practical skills, empowering them to champion sustainable improvements in public health through advocacy, training, and community engagement." },
             { title: "Our Vision", icon: Eye, desc: "A Tanzania where improved public health is led by empowered, knowledgeable, and active young people." },
@@ -99,7 +108,8 @@ const About: React.FC = () => {
               <p className="text-gray-700 leading-relaxed whitespace-pre-line">{item.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+        </AnimatePresence>
       </section>
 
       {/* OUR  CLUSTERS */}
