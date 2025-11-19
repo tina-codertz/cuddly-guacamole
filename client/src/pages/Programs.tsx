@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import { img } from "framer-motion/client";
+// import "swiper/css";
+// import "swiper/css/effect-fade";
+// import { img } from "framer-motion/client";
 
 const Programs: React.FC = () => {
   const heroSlides = [

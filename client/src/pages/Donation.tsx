@@ -1,6 +1,6 @@
 // src/pages/Donate.tsx
 import React from "react";
-import { color, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import { BanknoteIcon } from "lucide-react";
 
 const Donate: React.FC = () => {

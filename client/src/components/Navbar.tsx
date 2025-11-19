@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Contact,
-  Grab,
-  GraduationCap,
-  Group,
   HeartHandshakeIcon,
   Home,
   Info,
