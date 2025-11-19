@@ -1,13 +1,18 @@
 // src/pages/Programs.tsx
-import React from "react";
-import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/effect-fade";
-// import { img } from "framer-motion/client";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 
 const Programs: React.FC = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+  
   const heroSlides = [
     { img: "/assets/02.jpg", title: "Our Programs", subtitle: "Youth-led. Evidence-based. Impact-driven." },
     { img: "/assets/PHOTO-2024-09-17-21-20-46.jpg", title: "Transforming Health in Tanzania", subtitle: "Through innovation, advocacy, and action" },
@@ -97,23 +102,34 @@ details: [
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative h-screen">
-        <Swiper modules={[Autoplay, EffectFade]} autoplay={{ delay: 6000 }} loop effect="fade" className="h-full">
-          {heroSlides.map((slide, i) => (
-            <SwiperSlide key={i}>
-              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${slide.img})` }}>
-                <div className="absolute inset-0 bg-black/60" />
-                <div className="relative h-full flex items-center justify-center text-center text-white px-6">
-                  <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">{slide.title}</h1>
-                    <p className="text-2xl md:text-4xl font-light">{slide.subtitle}</p>
-                  </motion.div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <section className="relative h-screen w-full overflow-hidden">
+      <AnimatePresence>
+        {heroSlides.map((slide, i) =>
+          i === index ? (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2 }}
+              className="absolute inset-0 w-full h-full bg-cover bg-center flex items-center justify-center text-center"
+              style={{ backgroundImage: `url(${slide.img})` }}
+            >
+              <div className="absolute inset-0 bg-black/60" />
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="relative max-w-5xl px-6 text-white"
+              >
+                <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">{slide.title}</h1>
+                <p className="text-2xl md:text-4xl font-light">{slide.subtitle}</p>
+              </motion.div>
+            </motion.div>
+          ) : null
+        )}
+      </AnimatePresence>
+    </section>
 
       {/* PROGRAMS GRID */}
       <section className="py-20 px-6 bg-gray-50">
