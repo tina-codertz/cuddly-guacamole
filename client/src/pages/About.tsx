@@ -106,7 +106,7 @@ const About: React.FC = () => {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Our Five Strategic Clusters</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Our  Strategic Clusters</h2>
             <p className="text-xl text-gray-600 mt-4">Focused areas driving our impact across Tanzania</p>
           </motion.div>
 

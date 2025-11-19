@@ -201,7 +201,7 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <h3 className="text-3xl font-bold text-gray-800 mb-8">Our Five Key Clusters</h3>
+              <h3 className="text-3xl font-bold text-gray-800 mb-8">Our Key Clusters</h3>
               {clusters.map((cluster, i) => (
                 <div key={i} className="flex gap-5 group">
                   <div className="shrink-0 w-12 h-12 bg-[#0073A4] rounded-full flex items-center justify-center text-white font-bold text-xl">
