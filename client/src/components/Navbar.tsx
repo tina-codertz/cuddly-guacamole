@@ -18,11 +18,11 @@ type NavItem = {
 };
 
 const navLinks: NavItem[] = [
-  {
-    value: "Donate",
-    icon: <HeartHandshakeIcon size={18} className="text-red-700" />,
-    to: "donation",
-  },
+  // {
+  //   value: "Donate",
+  //   icon: <HeartHandshakeIcon size={18} className="text-red-700" />,
+  //   to: "donation",
+  // },
   {
     value: "Home",
     icon: <Home size={18} className="text-[#0073A4]" />,

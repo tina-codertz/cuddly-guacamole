@@ -49,8 +49,9 @@ const Home: React.FC = () => {
   ];
 
   const programs = [
-    { img: "/assets/03.jpg", title: "Tanzania Youth Health Forum", desc: "The largest annual youth health gathering in Tanzania — 600+ delegates.", link: "/programs/youth" },
-    { img: "/assets/05.jpg", title: "My AMR story (Fight AMR)", desc: "National campaign against antimicrobial resistance.", link: "/programs/amr" },
+    { img: "/assets/05.jpg", title: "MY AMR STORY (A NARRATIVE, SAVING LIVES)", desc: "National campaign against antimicrobial resistance.", link: "/programs" },
+    { img: "/assets/WhatsApp Image 2025-11-17 at 16.00.40.jpeg", title: "The YouthPulse Program 2025", desc: "The YouthPulse Program 2025 is TYHDO's flagship initiative to cultivate youth leadership in public health.", link: "/programs" },
+    { img: "/assets/03.jpg", title: "Tanzania Youth Health Forum", desc: "The largest annual youth health gathering in Tanzania — 600+ delegates.", link: "/programs" },
     { img: "/assets/PHOTO-2024-09-16-18-15-57.jpg", title: "Tanzania Youth Research Fellowship", desc: "One-year mentorship for young health researchers.", link:  "/programs" },
     { img: "/assets/04.jpg", title: "Health & Gender Initiative", desc: "Empowering women and girls in health advocacy.", link: "/programs"},
   ];
@@ -256,6 +257,17 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Donate button */}
+      {/* <div className="text-center my-16">
+        <p className="font-bold text-center  m-8">Support our mission to improve public health in Tanzania.</p>
+        <a
+          href="/donation"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold text-2xl py-6 px-16 rounded-full transition transform hover:scale-110 shadow-2xl"
+        >
+          Donate Now
+        </a>
+      </div>   */}
     </div>
   );
 };

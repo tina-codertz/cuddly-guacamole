@@ -148,14 +148,14 @@ const EventsBlogs: React.FC = () => {
                       <span>Location</span> {event.location}
                     </div>
                     <p className="text-gray-700 mb-6">{event.description}</p>
-                    {event.registerLink && (
+                    {/* {event.registerLink && (
                       <a
                         href={event.registerLink}
                         className="inline-block bg-[#0073A4] text-white font-bold py-3 px-8 rounded-full hover:bg-[#005f7a] transition"
                       >
                         Register Now
                       </a>
-                    )}
+                    )} */}
                   </div>
                 </motion.div>
               ))}
