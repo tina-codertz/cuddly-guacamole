@@ -28,13 +28,13 @@ const About: React.FC = () => {
     { title: "Research and Consultation", desc: "Facilitating youth-led research initiatives and providing platforms for youth voices to inform health policies and programs." },
   ];
 
-  const leadership = [
-    { name: "Tumaini Makole", role: "Director", img: "/assets/team/tumaini.jpg" },
-    { name: "Noel Shimba", role: "Deputy Director", img: "/assets/team/noel.jpg" },
-    { name: "Meseline Mulokozi", role: "Programs Manager", img: "/assets/team/meseline.jpg" },
-    { name: "Adam Mohammed", role: "Media & Communication Manager", img: "/assets/team/adam.jpg" },
-    { name: "Judith Reuben", role: "Finance & Administration Officer", img: "/assets/team/judith.jpg" },
-  ];
+  // const leadership = [
+  //   { name: "Tumaini Makole", role: "Director", img: "/assets/team/tumaini.jpg" },
+  //   { name: "Noel Shimba", role: "Deputy Director", img: "/assets/team/noel.jpg" },
+  //   { name: "Meseline Mulokozi", role: "Programs Manager", img: "/assets/team/meseline.jpg" },
+  //   { name: "Adam Mohammed", role: "Media & Communication Manager", img: "/assets/team/adam.jpg" },
+  //   { name: "Judith Reuben", role: "Finance & Administration Officer", img: "/assets/team/judith.jpg" },
+  // ];
 
   return (
     <>
@@ -136,7 +136,7 @@ const About: React.FC = () => {
       </section>
 
       {/* LEADERSHIP TEAM */}
-      <section className="py-20 px-6 bg-white">
+      {/* <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Our Leadership Team</h2>
@@ -157,7 +157,7 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CALL TO ACTION */}
       <section className="py-20 px-6 bg-[#0073A4] text-white">
